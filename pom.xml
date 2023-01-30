@@ -6,7 +6,7 @@
 
     <groupId>io.github</groupId>
     <artifactId>EnoughSkyblock</artifactId>
-    <version>0.2bugR</version>
+    <version>0.2</version>
     <packaging>jar</packaging>
 
     <name>EnoughSkyblock</name>
