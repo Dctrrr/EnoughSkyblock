@@ -14,7 +14,7 @@ import io.github.enoughskyblock.EnoughSkyblock;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import static io.github.enoughskyblock.ItemCreator.EnoughItems.builderclay;
+import static io.github.enoughskyblock.ItemCreator.ItemsCreator.builderclay;
 public class BuilderClayCMD implements CommandExecutor {
   private LocalDateTime time = LocalDateTime.now ();
   EnoughSkyblock plugin;
@@ -60,7 +60,7 @@ public class BuilderClayCMD implements CommandExecutor {
           ChatColor.RESET + "" + ChatColor.GRAY + "From: " +
             ((Player) sender).getDisplayName (),
           " ",
-          ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Edition: #" + (plugin.editionNumber),
+          ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Edition: #" + (plugin.builderClayEditionNumber),
           "",
           ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Year: " + formattedMonth + " " +
             time.getYear (),
@@ -71,8 +71,8 @@ public class BuilderClayCMD implements CommandExecutor {
         item = builderclay;
         player.getInventory ().addItem (builderclay);
 
-        player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cThe Builder's Clay§c " + ChatColor.GOLD + "#" + (plugin.editionNumber) + ChatColor.GOLD + "!");
-        plugin.editionNumber += 1;
+        player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cThe Builder's Clay§c " + ChatColor.GOLD + "#" + (plugin.builderClayEditionNumber) + ChatColor.GOLD + "!");
+        plugin.builderClayEditionNumber += 1;
       }
     }
     return true;

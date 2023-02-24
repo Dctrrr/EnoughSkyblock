@@ -14,7 +14,7 @@ import io.github.enoughskyblock.EnoughSkyblock;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import static io.github.enoughskyblock.ItemCreator.EnoughItems.spacehelm;
+import static io.github.enoughskyblock.ItemCreator.ItemsCreator.spacehelm;
 
 public class SpaceHelmCMD implements CommandExecutor {
   private LocalDateTime time = LocalDateTime.now ();
@@ -62,7 +62,7 @@ public class SpaceHelmCMD implements CommandExecutor {
           ChatColor.RESET + "" + ChatColor.GRAY + "From: " +
             ((Player) sender).getDisplayName (),
           " ",
-          ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Edition: #" + (plugin.editionNumber),
+          ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Edition: #" + (plugin.spaceHelmEditionNumber),
           "",
           ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Year: " + formattedMonth + " " +
             time.getYear (),
@@ -73,8 +73,8 @@ public class SpaceHelmCMD implements CommandExecutor {
         item = spacehelm;
         player.getInventory ().addItem (spacehelm);
 
-        player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cDctr's Space Helmet§c " + ChatColor.GOLD + "#" + (plugin.editionNumber) + ChatColor.GOLD + "!");
-        plugin.editionNumber += 1;
+        player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cDctr's Space Helmet§c " + ChatColor.GOLD + "#" + (plugin.spaceHelmEditionNumber) + ChatColor.GOLD + "!");
+        plugin.spaceHelmEditionNumber += 1;
       }
     }
     return true;

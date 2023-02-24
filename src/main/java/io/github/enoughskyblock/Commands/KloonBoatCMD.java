@@ -14,7 +14,7 @@ import io.github.enoughskyblock.EnoughSkyblock;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import static io.github.enoughskyblock.ItemCreator.EnoughItems.kloonboat;
+import static io.github.enoughskyblock.ItemCreator.ItemsCreator.kloonboat;
 
 
 public class KloonBoatCMD implements CommandExecutor {
@@ -61,7 +61,7 @@ public class KloonBoatCMD implements CommandExecutor {
           ChatColor.RESET + "" + ChatColor.GRAY + "From: " +
             ((Player) sender).getDisplayName (),
           " ",
-          ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Edition: #" + (plugin.editionNumber),
+          ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Edition: #" + (plugin.kloonBoatEditionNumber),
           "",
           ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Year: " + formattedMonth + " " +
             time.getYear (),
@@ -72,8 +72,8 @@ public class KloonBoatCMD implements CommandExecutor {
         item = kloonboat;
         player.getInventory ().addItem (kloonboat);
 
-        player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cKloon Boat§c " + ChatColor.GOLD + "#" + (plugin.editionNumber) + ChatColor.GOLD + "!");
-        plugin.editionNumber += 1;
+        player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cKloon Boat§c " + ChatColor.GOLD + "#" + (plugin.kloonBoatEditionNumber) + ChatColor.GOLD + "!");
+        plugin.kloonBoatEditionNumber += 1;
       }
     }
     return true;

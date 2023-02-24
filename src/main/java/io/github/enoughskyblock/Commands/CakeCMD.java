@@ -11,10 +11,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.enoughskyblock.EnoughSkyblock;
-import java.util.ArrayList;
+
 import java.util.Arrays;
 
-import static io.github.enoughskyblock.ItemCreator.EnoughItems.newyearcake;
+import static io.github.enoughskyblock.ItemCreator.ItemsCreator.newyearcake;
 
 public class CakeCMD implements CommandExecutor {
   EnoughSkyblock plugin;
@@ -62,7 +62,6 @@ public class CakeCMD implements CommandExecutor {
         player.getInventory ().addItem (newyearcake);
 
         player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cNew Year's Cake§c " + ChatColor.GOLD + "happy new year!");
-        plugin.editionNumber += 1;
       }
     }
     return true;

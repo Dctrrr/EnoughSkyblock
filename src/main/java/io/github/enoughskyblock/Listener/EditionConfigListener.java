@@ -10,7 +10,7 @@ public final class EditionConfigListener extends JavaPlugin implements Listener 
 
   @Override
   public void onEnable() {
-    config.addDefault("editionNumber", true);
+    config.addDefault("spaceHelmEdition", true);
     config.options().copyDefaults(true);
     saveConfig();
 

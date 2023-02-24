@@ -1,15 +1,18 @@
 package io.github.enoughskyblock;
 
-import io.github.enoughskyblock.Commands.EnoughCommands;
-import io.github.enoughskyblock.GUI.EnoughGUI;
-import io.github.enoughskyblock.ItemCreator.EnoughItems;
+import io.github.enoughskyblock.Commands.Commands;
+import io.github.enoughskyblock.GUI.ItemGUI;
+import io.github.enoughskyblock.ItemCreator.ItemsCreator;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class EnoughSkyblock extends JavaPlugin{
   private static EnoughSkyblock instance;
   FileConfiguration config = getConfig ();
-  public int editionNumber;
+  public int spaceHelmEditionNumber;
+  public int builderClayEditionNumber;
+  public int elevatorEditionNumber;
+  public int kloonBoatEditionNumber;
 
   public static EnoughSkyblock getInstance() {
     return EnoughSkyblock.instance;
@@ -18,15 +21,30 @@ public class EnoughSkyblock extends JavaPlugin{
   public void onEnable() {
 
     EnoughSkyblock.instance = this;
-    EnoughItems.init();
+    ItemsCreator.init();
 
-    config.addDefault ("editionNumber", 1);
+    config.addDefault ("spaceHelmEdition", 1);
     config.options ().copyDefaults (true);
     this.saveConfig ();
-    editionNumber = config.getInt ("editionNumber");
+    spaceHelmEditionNumber = config.getInt ("spaceHelmEdition");
 
-    EnoughCommands commands = new EnoughCommands();
-    EnoughGUI eclass = new EnoughGUI ();
+    config.addDefault ("builderClayEdition", 1);
+    config.options ().copyDefaults (true);
+    this.saveConfig ();
+    builderClayEditionNumber = config.getInt ("builderClayEdition");
+
+    config.addDefault ("elevatorEdition", 1);
+    config.options ().copyDefaults (true);
+    this.saveConfig ();
+    elevatorEditionNumber = config.getInt ("elevatorEdition");
+
+    config.addDefault ("kloonBoatEdition", 1);
+    config.options ().copyDefaults (true);
+    this.saveConfig ();
+    kloonBoatEditionNumber = config.getInt ("kloonBoatEdition");
+
+    Commands commands = new Commands ();
+    ItemGUI eclass = new ItemGUI ();
     getCommand("aic").setExecutor(commands);
     getCommand("spacehelm").setExecutor (commands);
     getCommand("builderclay").setExecutor (commands);
@@ -34,15 +52,26 @@ public class EnoughSkyblock extends JavaPlugin{
     getCommand("yearcake").setExecutor (commands);
     getCommand("kloonboat").setExecutor (commands);
 
-    getServer().getPluginManager().registerEvents(new EnoughItems (), this);
-    getServer().getPluginManager().registerEvents(new EnoughGUI (), this);
+    getServer().getPluginManager().registerEvents(new ItemsCreator (), this);
+    getServer().getPluginManager().registerEvents(new ItemGUI (), this);
 
   }
 
   @Override
   public void onDisable() {
-      config.set ("editionNumber", editionNumber);
+      config.set ("spaceHelmEdition", spaceHelmEditionNumber);
       saveConfig ();
-      instance = null;
+    instance = null;
+    config.set ("builderClayEdition", builderClayEditionNumber);
+    saveConfig ();
+    instance = null;
+    config.set ("elevatorEdition", elevatorEditionNumber);
+    saveConfig ();
+    instance = null;
+    config.set ("kloonBoatEdition", kloonBoatEditionNumber);
+    saveConfig ();
+    instance = null;
+
+
   }
 }

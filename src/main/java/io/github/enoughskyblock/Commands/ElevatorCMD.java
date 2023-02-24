@@ -16,7 +16,7 @@ import io.github.enoughskyblock.EnoughSkyblock;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import static io.github.enoughskyblock.ItemCreator.EnoughItems.ancelevator;
+import static io.github.enoughskyblock.ItemCreator.ItemsCreator.ancelevator;
 
 public class ElevatorCMD implements CommandExecutor {
   private LocalDateTime time = LocalDateTime.now ();
@@ -65,7 +65,7 @@ public class ElevatorCMD implements CommandExecutor {
           ChatColor.RESET + "" + ChatColor.GRAY + "From: " +
             ((Player) sender).getDisplayName (),
           " ",
-          ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Edition: #" + (plugin.editionNumber),
+          ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Edition: #" + (plugin.elevatorEditionNumber),
           "",
           ChatColor.RESET + "" + ChatColor.DARK_GRAY + "Year: " + formattedMonth + " " +
             time.getYear (),
@@ -76,8 +76,8 @@ public class ElevatorCMD implements CommandExecutor {
         item = ancelevator;
         player.getInventory ().addItem (ancelevator);
 
-        player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cAncient Elevator§c " + ChatColor.GOLD + "#" + (plugin.editionNumber) + ChatColor.GOLD + "!");
-        plugin.editionNumber += 1;
+        player.sendMessage(ChatColor.RED + ((Player)sender).getName() + " §egave you a§e §cAncient Elevator§c " + ChatColor.GOLD + "#" + (plugin.elevatorEditionNumber) + ChatColor.GOLD + "!");
+        plugin.elevatorEditionNumber += 1;
       }
     }
     return true;
