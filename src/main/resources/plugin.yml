@@ -4,34 +4,34 @@ main: io.github.enoughskyblock.EnoughSkyblock
 api-version: 1.16
 commands:
   aic:
-    usage: /<command>
     description: Skyblock Admin Item Browser GUI
+    usage: /<command>
     aliases: ib
     permission: skyblock.aic
     permission-message: Sorry you cannot do this!
   spacehelm:
-   usage: /<command>
-   description: Reward the player with a Dctr's Space Helmet!
-   permission: skyblock.spacehelm
-   permission-message: Sorry you cannot do this!
-  kloonboat:
-  usage: /<command>
-  description: Reward the player with a Kloon boat!
-  permission: skyblock.kloonboat
-  permission-message: Sorry you cannot do this!
-  builderclay:
+    description: Reward the player with a Dctr's Space Helmet!
     usage: /<command>
+    permission: skyblock.spacehelm
+    permission-message: Sorry you cannot do this!
+  kloonboat:
+    description: Reward the player with a Kloon boat!
+    usage: /<command>
+    permission: skyblock.kloonboat
+    permission-message: Sorry you cannot do this!
+  builderclay:
     description: Reward the player with The Builder's CLay!
+    usage: /<command>
     permission: skyblock.builderclay
     permission-message: Sorry you cannot do this!
   ancelev:
-    usage: /<command>
     description: Reward the player with a Ancient Elevator!
+    usage: /<command>
     permission: skyblock.elevator
     permission-message: Sorry you cannot do this!
   yearcake:
+    description: Happy New SkyBlock year!
     usage: /<command>
-    description: Happy new SkyBlock year!
     permission: skyblock.newyearcake
     permission-message: Sorry you cannot do this!
-
+    
